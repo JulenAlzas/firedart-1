@@ -68,8 +68,11 @@ class FirebaseAuth {
   Future<void> requestEmailVerification() =>
       _userGateway.requestEmailVerification();
 
-  Future<void> changePassword(String password) =>
+  Future<Map<String, dynamic>> changePassword(String password) =>
       _userGateway.changePassword(password);
+  
+  Future<Map<String, dynamic>> changeEmail(String email) =>
+      _userGateway.changeEmail(email);
 
   Future<User> getUser() => _userGateway.getUser();
 

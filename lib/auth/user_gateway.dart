@@ -17,9 +17,15 @@ class UserGateway {
     return User.fromMap(map['users'][0]);
   }
 
-  Future<void> changePassword(String password) async {
-    await _post('update', {
+  Future<Map<String, dynamic>> changePassword(String password) async {
+    return await _post('update', {
       'password': password,
+    });
+  }
+
+  Future<Map<String, dynamic>> changeEmail(String email) async {
+    return await _post('update', {
+      'email': email,
     });
   }
 

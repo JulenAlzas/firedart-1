@@ -36,6 +36,10 @@ class TokenProvider {
     return _tokenStore.idToken!;
   }
 
+  void setidToken(String idToken) {
+    _tokenStore.setidToken(idToken);
+  }
+
   void setToken(Map<String, dynamic> map) {
     _tokenStore.setToken(
       map['localId'],

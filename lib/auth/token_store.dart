@@ -11,6 +11,10 @@ abstract class TokenStore {
 
   bool get hasToken => _token != null;
 
+  void setidToken(String idToken) {
+    _token?._idToken = idToken;
+  }
+
   void setToken(
       String userId, String idToken, String refreshToken, int expiresIn) {
     var expiry = DateTime.now().add(Duration(seconds: expiresIn));
@@ -59,7 +63,7 @@ class VolatileStore extends TokenStore {
 
 class Token {
   final String _userId;
-  final String _idToken;
+  String? _idToken;
   final String _refreshToken;
   final DateTime _expiry;
 
